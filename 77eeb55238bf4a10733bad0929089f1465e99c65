@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "eb2289ab_c6260832",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1416
+      },
+      "writtenOn": "2021-04-29T13:05:46Z",
+      "side": 1,
+      "message": "Test:\n- Compiles\n- The recycler view is able to expand to avaialble height without any empty space above/below\n- The apply button is not blocked by any views",
+      "revId": "77eeb55238bf4a10733bad0929089f1465e99c65",
+      "serverId": "9f904cbb-a964-4fab-a7dc-5cfc4d5c238b"
+    }
+  ]
+}
