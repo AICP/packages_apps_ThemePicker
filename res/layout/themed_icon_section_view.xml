@@ -42,18 +42,18 @@
         <Switch
             android:id="@+id/themed_icon_toggle"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:background="@null"
             android:clickable="false"
             android:focusable="false"
-            android:minHeight="0dp"
             style="@style/Switch.SettingsLib"/>
 
     </LinearLayout>
 
     <Space
         android:layout_width="0dp"
-        android:layout_height="8dp" />
+        android:layout_height="8dp"
+        android:visibility="gone" />
 
     <TextView
         android:id="@+id/beta_tag"
@@ -63,6 +63,7 @@
         android:paddingVertical="4dp"
         android:text="@string/beta_title"
         android:textColor="?androidprv:attr/textColorOnAccent"
+        android:visibility="gone"
         style="@style/BetaTagTextStyle" />
 
 </com.android.customization.picker.themedicon.ThemedIconSectionView>
