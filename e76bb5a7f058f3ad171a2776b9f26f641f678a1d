@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7c940757_8a6390aa",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1416
+      },
+      "writtenOn": "2022-03-22T14:22:15Z",
+      "side": 1,
+      "message": "For all open changes on Themepicker on s12.1(only)",
+      "revId": "e76bb5a7f058f3ad171a2776b9f26f641f678a1d",
+      "serverId": "9f904cbb-a964-4fab-a7dc-5cfc4d5c238b"
+    }
+  ]
+}
