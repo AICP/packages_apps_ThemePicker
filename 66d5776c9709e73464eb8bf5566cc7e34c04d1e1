@@ -16,6 +16,23 @@
       "message": "Test:\n - Compiles\n - Open themepicker (Longpress on desktop -\u003e Wallpapers \u0026 Style)\n - Without this patch the \"Themed Icons\" switch is clipped on the botoom\n - With this patch the switch is properly displayed",
       "revId": "66d5776c9709e73464eb8bf5566cc7e34c04d1e1",
       "serverId": "9f904cbb-a964-4fab-a7dc-5cfc4d5c238b"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "afabc7e6_dd3c2e68",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1416
+      },
+      "writtenOn": "2022-03-24T01:48:39Z",
+      "side": 1,
+      "message": "The main issue was fixed in 12L and hiding the beta might isn\u0027t worth now",
+      "revId": "66d5776c9709e73464eb8bf5566cc7e34c04d1e1",
+      "serverId": "9f904cbb-a964-4fab-a7dc-5cfc4d5c238b"
     }
   ]
 }
