@@ -123,4 +123,6 @@
 
     <dimen name="beta_tag_background_width">46dp</dimen>
     <dimen name="beta_tag_background_height">24dp</dimen>
+
+    <dimen name="default_margin">16dp</dimen>
 </resources>

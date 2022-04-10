@@ -69,6 +69,9 @@ android_app {
     name: "ThemePicker",
 
     static_libs: [
+        "androidx.lifecycle_lifecycle-runtime-ktx",
+        "kotlinx_coroutines_android",
+        "kotlinx_coroutines",
         "colorkt",
         "themelib",
         "wallpaper-common-deps",
