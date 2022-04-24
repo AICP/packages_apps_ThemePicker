@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e54e0b24_6644db13",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1416
+      },
+      "writtenOn": "2022-04-24T10:16:06Z",
+      "side": 1,
+      "message": "Switch to aicp_strings and aicp_dimens if required to be restored again",
+      "revId": "f57f7f9571206e3aff4128ebd765c25d244942e3",
+      "serverId": "9f904cbb-a964-4fab-a7dc-5cfc4d5c238b"
+    }
+  ]
+}
