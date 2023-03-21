@@ -124,6 +124,7 @@ android_app {
         "WallpaperPicker2",
     ],
     required: [
+        "ThemesStub",
         "privapp_whitelist_com.android.wallpaper"
     ],
 }
