@@ -31,7 +31,9 @@ class KeyguardQuickAffordanceSnapshotRestorer(
     private var snapshotStore: SnapshotStore = SnapshotStore.NOOP
 
     suspend fun storeSnapshot() {
+        if (this::snapshotUpdater.isInitialized) {
         snapshotStore.store(snapshot())
+        }
     }
 
     override suspend fun setUpSnapshotRestorer(
