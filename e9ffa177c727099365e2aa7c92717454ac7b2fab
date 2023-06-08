@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bc6dec1c_73e3e362",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1416
+      },
+      "writtenOn": "2023-06-08T03:00:44Z",
+      "side": 1,
+      "message": "Test:\n- Pick up with \"13-lockscreen-shortcuts\" topic\n- Builds\n- Switch between LiveWallpaper and an image wallpaper\n- Observe no crash\n\nWithout this patch, going into Livewallpaper previews will cause Themepicker to crash",
+      "revId": "e9ffa177c727099365e2aa7c92717454ac7b2fab",
+      "serverId": "9f904cbb-a964-4fab-a7dc-5cfc4d5c238b"
+    }
+  ]
+}
