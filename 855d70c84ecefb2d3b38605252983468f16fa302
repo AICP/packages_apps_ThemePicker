@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "526279d8_78543912",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1416
+      },
+      "writtenOn": "2024-02-20T16:13:49Z",
+      "side": 1,
+      "message": "Doesn\u0027t compile, No way to reproduce the issue mentioned in the commit message, except the useless stacktrace",
+      "revId": "855d70c84ecefb2d3b38605252983468f16fa302",
+      "serverId": "9f904cbb-a964-4fab-a7dc-5cfc4d5c238b"
+    }
+  ]
+}
