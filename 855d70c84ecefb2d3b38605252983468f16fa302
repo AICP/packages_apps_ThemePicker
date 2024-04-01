@@ -16,6 +16,23 @@
       "message": "Doesn\u0027t compile, No way to reproduce the issue mentioned in the commit message, except the useless stacktrace",
       "revId": "855d70c84ecefb2d3b38605252983468f16fa302",
       "serverId": "9f904cbb-a964-4fab-a7dc-5cfc4d5c238b"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a7b5104f_9faa2c17",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1646
+      },
+      "writtenOn": "2024-04-01T11:51:42Z",
+      "side": 1,
+      "message": "build error",
+      "revId": "855d70c84ecefb2d3b38605252983468f16fa302",
+      "serverId": "9f904cbb-a964-4fab-a7dc-5cfc4d5c238b"
     }
   ]
 }
