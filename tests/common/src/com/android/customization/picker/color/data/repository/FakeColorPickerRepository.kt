@@ -43,6 +43,7 @@ class FakeColorPickerRepository(private val context: Context) : ColorPickerRepos
                 ColorType.WALLPAPER_COLOR to listOf(),
                 ColorType.PRESET_COLOR to listOf(),
                 ColorType.DERPFEST_COLOR to listOf(),
+                ColorType.AICP_COLOR to listOf(),
             )
         )
     override val colorOptions: StateFlow<Map<ColorType, List<ColorOptionModel>>> =
@@ -97,6 +98,7 @@ class FakeColorPickerRepository(private val context: Context) : ColorPickerRepos
                         }
                     },
                 ColorType.DERPFEST_COLOR to listOf(),
+                ColorType.AICP_COLOR to listOf(),
             )
     }
 
@@ -145,6 +147,7 @@ class FakeColorPickerRepository(private val context: Context) : ColorPickerRepos
                         }
                     },
                 ColorType.DERPFEST_COLOR to listOf(),
+                ColorType.AICP_COLOR to listOf(),
             )
     }
 
@@ -262,11 +265,24 @@ class FakeColorPickerRepository(private val context: Context) : ColorPickerRepos
                 )
             }
         }
+        val aicpColorOptions = colorOptions[ColorType.AICP_COLOR]!!
+        val newAICPColorOptions = buildList {
+            aicpColorOptions.forEach { option ->
+                add(
+                    ColorOptionModel(
+                        key = option.key,
+                        colorOption = option.colorOption,
+                        isSelected = option.testEquals(colorOptionModel),
+                    )
+                )
+            }
+        }
         _colorOptions.value =
             mapOf(
                 ColorType.WALLPAPER_COLOR to newWallpaperColorOptions,
                 ColorType.PRESET_COLOR to newBasicColorOptions,
                 ColorType.DERPFEST_COLOR to newDerpfestColorOptions,
+                ColorType.AICP_COLOR to newAICPColorOptions,
             )
     }
 
@@ -277,6 +293,7 @@ class FakeColorPickerRepository(private val context: Context) : ColorPickerRepos
             ColorType.WALLPAPER_COLOR -> ColorOptionsProvider.COLOR_SOURCE_HOME
             ColorType.PRESET_COLOR -> ColorOptionsProvider.COLOR_SOURCE_PRESET
             ColorType.DERPFEST_COLOR -> ColorOptionsProvider.COLOR_SOURCE_PRESET
+            ColorType.AICP_COLOR -> ColorOptionsProvider.COLOR_SOURCE_PRESET
             else -> null
         }
 
