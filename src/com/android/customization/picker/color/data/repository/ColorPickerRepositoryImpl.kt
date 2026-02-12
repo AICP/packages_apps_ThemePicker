@@ -68,6 +68,7 @@ constructor(
                                 ColorType.WALLPAPER_COLOR to listOf(),
                                 ColorType.PRESET_COLOR to listOf(),
                                 ColorType.DERPFEST_COLOR to listOf(),
+                                ColorType.AICP_COLOR to listOf(),
                             )
                         )
                     )
@@ -84,6 +85,8 @@ constructor(
                             val presetColorOptions: MutableList<ColorOptionModel> = mutableListOf()
                             val derpfestColorOptions: MutableList<ColorOptionModel> =
                                 mutableListOf()
+                            val aicpColorOptions: MutableList<ColorOptionModel> =
+                                mutableListOf()
                             options?.forEach { option ->
                                 when ((option as ColorOptionImpl).type) {
                                     ColorType.WALLPAPER_COLOR ->
@@ -92,6 +95,8 @@ constructor(
                                         presetColorOptions.add(option.toModel())
                                     ColorType.DERPFEST_COLOR ->
                                         derpfestColorOptions.add(option.toModel())
+                                    ColorType.AICP_COLOR ->
+                                        aicpColorOptions.add(option.toModel())
                                 }
                             }
                             continuation.resumeWith(
@@ -100,6 +105,7 @@ constructor(
                                         ColorType.WALLPAPER_COLOR to wallpaperColorOptions,
                                         ColorType.PRESET_COLOR to presetColorOptions,
                                         ColorType.DERPFEST_COLOR to derpfestColorOptions,
+                                        ColorType.AICP_COLOR to aicpColorOptions,
                                     )
                                 )
                             )

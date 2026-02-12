@@ -25,4 +25,7 @@ enum class ColorType {
 
     /** DerpFest colors */
     DERPFEST_COLOR,
+
+    /** AICP colors */
+    AICP_COLOR,
 }

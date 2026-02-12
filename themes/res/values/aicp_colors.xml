@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="amberlight">#ffa000</color>
+    <color name="amberdark">#ffab00</color>
+    <color name="bluelight">#03a9f4</color>
+    <color name="carnationlight">#fb83b2</color>
+    <color name="carnationdark">#ffa6c9</color>
+    <color name="cyan">#00bcd4</color>
+    <color name="denim">#1560BD</color>
+    <color name="etherealblue">#7E8ACD</color>
+    <color name="etherealgreen">#7DB694</color>
+    <color name="etherealpink">#D37A7A</color>
+    <color name="gold">#CFB53B</color>
+    <color name="greenlight">#8bc34a</color>
+    <color name="grey">#808080</color>
+    <color name="hopelight">#5fc72d</color>
+    <color name="hopedark">#59ff3a</color>
+    <color name="indigoaicp">#536DFE</color>
+    <color name="lavalight">#B20120</color>
+    <color name="lavadark">#EB0028</color>
+    <color name="lime">#cddc39</color>
+    <color name="orange">#ff9800</color>
+    <color name="oxygen">#53ADEF</color>
+    <color name="pinklight">#e91e63</color>
+    <color name="pinkdark">#f48fb1</color>
+    <color name="pixellight">#4285f4</color>
+    <color name="pixeldark">#3367d6</color>
+    <color name="purple">#673ab7</color>
+    <color name="red">#ff0000</color>
+    <color name="teallight">#008577</color>
+    <color name="tealdark">#80cbc4</color>
+    <color name="turquoiselight">#00C1C1</color>
+    <color name="turquoisedark">#00FFFF</color>
+    <color name="yellowlight">#fdd835</color>
+    <color name="yellowdark">#ffeb3b</color>
+</resources>
