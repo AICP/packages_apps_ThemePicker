@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!-- Amber-->
+    <string name="amberlight_color_name">AmberLight</string>
+    <string name="bundle_name_amberlight" translatable="false">@string/amberlight_color_name</string>
+    <string name="color_style_amberlight" translatable="false">aicp</string>
+
+    <string name="amberdark_color_name">AmberDark</string>
+    <string name="bundle_name_amberdark" translatable="false">@string/amberdark_color_name</string>
+    <string name="color_style_amberdark" translatable="false">aicp</string>
+
+<!-- BlueLight -->
+    <string name="bluelightlight_color_name">BlueLight</string>
+    <string name="bundle_name_bluelight" translatable="false">@string/bluelight_color_name</string>
+    <string name="color_style_bluelight" translatable="false">aicp</string>
+
+<!-- Carnation -->
+    <string name="carnationlight_color_name">CarnationLight</string>
+    <string name="bundle_name_carnationlight" translatable="false">@string/carnationlight_color_name</string>
+    <string name="color_style_carnationlight" translatable="false">aicp</string>
+
+    <string name="carnationdark_color_name">CarnationDark</string>
+    <string name="bundle_name_carnationdark" translatable="false">@string/carnationdark_color_name</string>
+    <string name="color_style_carnationdark" translatable="false">aicp</string>
+
+<!-- Cyan -->
+    <string name="cyan_color_name">Cyan</string>
+    <string name="bundle_name_cyan" translatable="false">@string/cyan_color_name</string>
+    <string name="color_style_cyan" translatable="false">aicp</string>
+
+<!-- Denim -->
+    <string name="denimlight_color_name">Denim</string>
+    <string name="bundle_name_denim" translatable="false">@string/denim_color_name</string>
+    <string name="color_style_denim" translatable="false">aicp</string>
+
+<!-- EtherealBlue -->
+    <string name="etherealblue_color_name">EtherealBlue</string>
+    <string name="bundle_name_etherealblue" translatable="false">@string/etherealblue_color_name</string>
+    <string name="color_style_etherealblue" translatable="false">aicp</string>
+
+<!-- EtherealGreen -->
+    <string name="etherealgreen_color_name">EtherealGreen</string>
+    <string name="bundle_name_etherealgreen" translatable="false">@string/etherealgreen_color_name</string>
+    <string name="color_style_etherealgreen" translatable="false">aicp</string>
+
+<!-- EtherealPink -->
+    <string name="etherealpink_color_name">EtherealPink</string>
+    <string name="bundle_name_etherealpink" translatable="false">@string/etherealpink_color_name</string>
+    <string name="color_style_etherealpink" translatable="false">aicp</string>
+
+<!-- Gold -->
+    <string name="goldlight_color_name">Gold</string>
+    <string name="bundle_name_gold" translatable="false">@string/gold_color_name</string>
+    <string name="color_style_gold" translatable="false">aicp</string>
+
+<!-- GreenLight -->
+    <string name="greenlight_color_name">GreenLight</string>
+    <string name="bundle_name_greenlight" translatable="false">@string/greenlight_color_name</string>
+    <string name="color_style_greenlight" translatable="false">aicp</string>
+
+<!-- Grey -->
+    <string name="grey_color_name">Grey</string>
+    <string name="bundle_name_grey" translatable="false">@string/grey_color_name</string>
+    <string name="color_style_grey" translatable="false">aicp</string>
+
+<!-- Hope -->
+    <string name="hopelight_color_name">HopeLight</string>
+    <string name="bundle_name_hopelight" translatable="false">@string/hopelight_color_name</string>
+    <string name="color_style_hopelight" translatable="false">aicp</string>
+
+    <string name="hopedark_color_name">HopeDark</string>
+    <string name="bundle_name_hopedark" translatable="false">@string/hopedark_color_name</string>
+    <string name="color_style_hopedark" translatable="false">aicp</string>
+
+<!-- Indigo -->
+    <string name="indigoaicp_color_name">IndigoAicp</string>
+    <string name="bundle_name_indigoaicp" translatable="false">@string/indigoaicp_color_name</string>
+    <string name="color_style_indigoaicp" translatable="false">aicp</string>
+
+<!-- Lava -->
+    <string name="lavalight_color_name">LavaLight</string>
+    <string name="bundle_name_lavalight" translatable="false">@string/lavalight_color_name</string>
+    <string name="color_style_lavalight" translatable="false">aicp</string>
+
+    <string name="lavadark_color_name">LavaDark</string>
+    <string name="bundle_name_lavadark" translatable="false">@string/lavadark_color_name</string>
+    <string name="color_style_lavadark" translatable="false">aicp</string>
+
+<!-- Lime -->
+    <string name="lime_color_name">Lime</string>
+    <string name="bundle_name_lime" translatable="false">@string/lime_color_name</string>
+    <string name="color_style_lime" translatable="false">aicp</string>
+
+<!-- Orange -->
+    <string name="orange_color_name">Orange</string>
+    <string name="bundle_name_orange" translatable="false">@string/orange_color_name</string>
+    <string name="color_style_orange" translatable="false">aicp</string>
+
+<!-- Oxygen -->
+    <string name="oxygen_color_name">Oxygen</string>
+    <string name="bundle_name_oxygen" translatable="false">@string/oxygen_color_name</string>
+    <string name="color_style_oxygen" translatable="false">aicp</string>
+
+<!-- Pink -->
+    <string name="pinklight_color_name">PinkLight</string>
+    <string name="bundle_name_pinklight" translatable="false">@string/pinklight_color_name</string>
+    <string name="color_style_pinklight" translatable="false">aicp</string>
+
+    <string name="pinkdark_color_name">PinkDark</string>
+    <string name="bundle_name_pinkdark" translatable="false">@string/pinkdark_color_name</string>
+    <string name="color_style_pinkdark" translatable="false">aicp</string>
+
+<!-- Pixel -->
+    <string name="pixellight_color_name">PixelLight</string>
+    <string name="bundle_name_pixellight" translatable="false">@string/pixellight_color_name</string>
+    <string name="color_style_pixellight" translatable="false">aicp</string>
+
+    <string name="pixeldark_color_name">PixelDark</string>
+    <string name="bundle_name_pixeldark" translatable="false">@string/pixeldark_color_name</string>
+    <string name="color_style_pixeldark" translatable="false">aicp</string>
+
+<!-- Purple -->
+    <string name="purple_color_name">Purple</string>
+    <string name="bundle_name_purple" translatable="false">@string/purple_color_name</string>
+    <string name="color_style_purple" translatable="false">aicp</string>
+
+<!-- Red -->
+    <string name="red_color_name">Red</string>
+    <string name="bundle_name_red" translatable="false">@string/red_color_name</string>
+    <string name="color_style_red" translatable="false">aicp</string>
+
+<!-- Teal -->
+    <string name="teallight_color_name">TealLight</string>
+    <string name="bundle_name_teallight" translatable="false">@string/teallight_color_name</string>
+    <string name="color_style_teallight" translatable="false">aicp</string>
+
+    <string name="tealdark_color_name">TealDark</string>
+    <string name="bundle_name_tealdark" translatable="false">@string/tealdark_color_name</string>
+    <string name="color_style_tealdark" translatable="false">aicp</string>
+
+<!-- Turquoise -->
+    <string name="turquoiselight_color_name">TurquoiseLight</string>
+    <string name="bundle_name_turquoiselight" translatable="false">@string/turquoiselight_color_name</string>
+    <string name="color_style_turquoiselight" translatable="false">aicp</string>
+
+    <string name="turquoisedark_color_name">TurquoiseDark</string>
+    <string name="bundle_name_turquoisedark" translatable="false">@string/turquoisedark_color_name</string>
+    <string name="color_style_turquoisedark" translatable="false">aicp</string>
+
+<!-- Yellow -->
+    <string name="yellowlight_color_name">YellowLight</string>
+    <string name="bundle_name_yellowlight" translatable="false">@string/yellowlight_color_name</string>
+    <string name="color_style_yellowlight" translatable="false">aicp</string>
+
+    <string name="yellowdark_color_name">YellowDark</string>
+    <string name="bundle_name_yellowdark" translatable="false">@string/yellowdark_color_name</string>
+    <string name="color_style_yellowdark" translatable="false">aicp</string>
+</resources>
