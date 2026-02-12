@@ -41,5 +41,38 @@
         <item>fruits3</item>
         <item>fruits4</item>
         <item>fruits5</item>
+        <item>amberlight</item>
+        <item>amberdark</item>
+        <item>bluelight</item>
+        <item>carnationlight</item>
+        <item>carnationdark</item>
+        <item>cyan</item>
+        <item>denim</item>
+        <item>etherealblue</item>
+        <item>etherealgreen</item>
+        <item>etherealpink</item>
+        <item>gold</item>
+        <item>greenlight</item>
+        <item>grey</item>
+        <item>hopelight</item>
+        <item>hopedark</item>
+        <item>indigoaicp</item>
+        <item>lavalight</item>
+        <item>lavadark</item>
+        <item>lime</item>
+        <item>orange</item>
+        <item>oxygen</item>
+        <item>pinklight</item>
+        <item>pinkdark</item>
+        <item>pixellight</item>
+        <item>pixeldark</item>
+        <item>purple</item>
+        <item>red</item>
+        <item>teallight</item>
+        <item>tealdark</item>
+        <item>turquoiselight</item>
+        <item>turquoisedark</item>
+        <item>yellowlight</item>
+        <item>yellowdark</item>
     </array>
 </resources>
