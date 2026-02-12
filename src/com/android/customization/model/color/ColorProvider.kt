@@ -89,6 +89,7 @@ class ColorProvider(private val context: Context, stubPackageName: String) :
     private var homeWallpaperColors: WallpaperColors? = null
     private var lockWallpaperColors: WallpaperColors? = null
     private val derpFestColorProvider = DerpFestColorProvider(context)
+    private val aicpColorProvider = AICPColorProvider(context)
 
     override fun isAvailable(): Boolean {
         return monetEnabled && super.isAvailable() && colorsAvailable
@@ -388,6 +389,7 @@ class ColorProvider(private val context: Context, stubPackageName: String) :
         val presetColors = presetColorBundles ?: emptyList()
         val wallpaperColors = wallpaperColorBundles?.toMutableList() ?: mutableListOf()
         val derpFestColors = derpFestColorProvider.getDerpFestColors()
+        val aicpColors = aicpColorProvider.getAICPColors()
         
         // Insert monochrome in the second position if it is enabled and included in preset
         // colors
@@ -404,6 +406,6 @@ class ColorProvider(private val context: Context, stubPackageName: String) :
                 )
             }
         }
-        return wallpaperColors + presetColors + derpFestColors
+        return wallpaperColors + presetColors + derpFestColors + aicpColors
     }
 }

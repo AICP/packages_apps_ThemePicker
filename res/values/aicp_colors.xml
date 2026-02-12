@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="aicp_amberlight">#ffa000</color>
+    <color name="aicp_amberdark">#ffab00</color>
+    <color name="aicp_bluelight">#03a9f4</color>
+    <color name="aicp_carnationlight">#fb83b2</color>
+    <color name="aicp_carnationdark">#ffa6c9</color>
+    <color name="aicp_cyan">#00bcd4</color>
+    <color name="aicp_denim">#1560BD</color>
+    <color name="aicp_etherealblue">#7E8ACD</color>
+    <color name="aicp_etherealgreen">#7DB694</color>
+    <color name="aicp_etherealpink">#D37A7A</color>
+    <color name="aicp_gold">#CFB53B</color>
+    <color name="aicp_greenlight">#8bc34a</color>
+    <color name="aicp_grey">#808080</color>
+    <color name="aicp_hopelight">#5fc72d</color>
+    <color name="aicp_hopedark">#59ff3a</color>
+    <color name="aicp_indigoaicp">#536DFE</color>
+    <color name="aicp_lavalight">#B20120</color>
+    <color name="aicp_lavadark">#EB0028</color>
+    <color name="aicp_lime">#cddc39</color>
+    <color name="aicp_orange">#ff9800</color>
+    <color name="aicp_oxygen">#53ADEF</color>
+    <color name="aicp_pinklight">#e91e63</color>
+    <color name="aicp_pinkdark">#f48fb1</color>
+    <color name="aicp_pixellight">#4285f4</color>
+    <color name="aicp_pixeldark">#3367d6</color>
+    <color name="aicp_purple">#673ab7</color>
+    <color name="aicp_red">#ff0000</color>
+    <color name="aicp_teallight">#008577</color>
+    <color name="aicp_tealdark">#80cbc4</color>
+    <color name="aicp_turquoiselight">#00C1C1</color>
+    <color name="aicp_turquoisedark">#00FFFF</color>
+    <color name="aicp_yellowlight">#fdd835</color>
+    <color name="aicp_yellowdark">#ffeb3b</color>
+</resources>
