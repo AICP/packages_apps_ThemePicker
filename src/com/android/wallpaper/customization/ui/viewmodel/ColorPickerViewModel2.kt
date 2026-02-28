@@ -117,13 +117,13 @@ constructor(
     val colorTypeTabSubheader: Flow<String> =
         selectedColorTypeTabId.map { selectedColorTypeIdOrNull ->
             when (selectedColorTypeIdOrNull ?: ColorType.WALLPAPER_COLOR) {
+                ColorType.AICP_COLOR ->
+                    context.resources.getString(R.string.preset_color_subheader)
                 ColorType.WALLPAPER_COLOR ->
                     context.resources.getString(R.string.wallpaper_color_subheader)
                 ColorType.PRESET_COLOR ->
                     context.resources.getString(R.string.preset_color_subheader)
                 ColorType.DERPFEST_COLOR ->
-                    context.resources.getString(R.string.preset_color_subheader)
-                ColorType.AICP_COLOR ->
                     context.resources.getString(R.string.preset_color_subheader)
             }
         }
