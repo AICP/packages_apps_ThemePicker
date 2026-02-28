@@ -386,11 +386,11 @@ class ColorProvider(private val context: Context, stubPackageName: String) :
     }
 
     private fun buildFinalList(): List<ColorOption> {
+        val aicpColors = aicpColorProvider.getAICPColors()
         val presetColors = presetColorBundles ?: emptyList()
         val wallpaperColors = wallpaperColorBundles?.toMutableList() ?: mutableListOf()
         val derpFestColors = derpFestColorProvider.getDerpFestColors()
-        val aicpColors = aicpColorProvider.getAICPColors()
-        
+
         // Insert monochrome in the second position if it is enabled and included in preset
         // colors
         monochromeBundleName?.let {
