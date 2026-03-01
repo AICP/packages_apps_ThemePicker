@@ -65,10 +65,10 @@ constructor(
                     continuation.resumeWith(
                         Result.success(
                             mapOf(
+                                ColorType.AICP_COLOR to listOf(),
                                 ColorType.WALLPAPER_COLOR to listOf(),
                                 ColorType.PRESET_COLOR to listOf(),
                                 ColorType.DERPFEST_COLOR to listOf(),
-                                ColorType.AICP_COLOR to listOf(),
                             )
                         )
                     )
@@ -102,10 +102,10 @@ constructor(
                             continuation.resumeWith(
                                 Result.success(
                                     mapOf(
+                                        ColorType.AICP_COLOR to aicpColorOptions,
                                         ColorType.WALLPAPER_COLOR to wallpaperColorOptions,
                                         ColorType.PRESET_COLOR to presetColorOptions,
                                         ColorType.DERPFEST_COLOR to derpfestColorOptions,
-                                        ColorType.AICP_COLOR to aicpColorOptions,
                                     )
                                 )
                             )

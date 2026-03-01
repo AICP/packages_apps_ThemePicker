@@ -40,10 +40,10 @@ class FakeColorPickerRepository(private val context: Context) : ColorPickerRepos
     private val _colorOptions =
         MutableStateFlow(
             mapOf<ColorType, List<ColorOptionModel>>(
+                ColorType.AICP_COLOR to listOf(),
                 ColorType.WALLPAPER_COLOR to listOf(),
                 ColorType.PRESET_COLOR to listOf(),
                 ColorType.DERPFEST_COLOR to listOf(),
-                ColorType.AICP_COLOR to listOf(),
             )
         )
     override val colorOptions: StateFlow<Map<ColorType, List<ColorOptionModel>>> =
@@ -61,6 +61,7 @@ class FakeColorPickerRepository(private val context: Context) : ColorPickerRepos
     ) {
         _colorOptions.value =
             mapOf(
+                ColorType.AICP_COLOR to listOf(),
                 ColorType.WALLPAPER_COLOR to
                     buildList {
                         for ((index, colorOption) in wallpaperOptions.withIndex()) {
@@ -98,7 +99,6 @@ class FakeColorPickerRepository(private val context: Context) : ColorPickerRepos
                         }
                     },
                 ColorType.DERPFEST_COLOR to listOf(),
-                ColorType.AICP_COLOR to listOf(),
             )
     }
 
@@ -110,6 +110,7 @@ class FakeColorPickerRepository(private val context: Context) : ColorPickerRepos
     ) {
         _colorOptions.value =
             mapOf(
+                ColorType.AICP_COLOR to listOf(),
                 ColorType.WALLPAPER_COLOR to
                     buildList {
                         repeat(times = numWallpaperOptions) { index ->
@@ -147,7 +148,6 @@ class FakeColorPickerRepository(private val context: Context) : ColorPickerRepos
                         }
                     },
                 ColorType.DERPFEST_COLOR to listOf(),
-                ColorType.AICP_COLOR to listOf(),
             )
     }
 
@@ -279,10 +279,10 @@ class FakeColorPickerRepository(private val context: Context) : ColorPickerRepos
         }
         _colorOptions.value =
             mapOf(
+                ColorType.AICP_COLOR to newAICPColorOptions,
                 ColorType.WALLPAPER_COLOR to newWallpaperColorOptions,
                 ColorType.PRESET_COLOR to newBasicColorOptions,
                 ColorType.DERPFEST_COLOR to newDerpfestColorOptions,
-                ColorType.AICP_COLOR to newAICPColorOptions,
             )
     }
 
