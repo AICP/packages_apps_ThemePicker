@@ -106,9 +106,9 @@ constructor(
                                     Result.success(
                                         mapOf(
                                             ColorType.WALLPAPER_COLOR to wallpaperColorOptions,
+                                            ColorType.AICP_COLOR to aicpColorOptions,
                                             ColorType.PRESET_COLOR to presetColorOptions,
                                             ColorType.DERPFEST_COLOR to derpfestColorOptions,
-                                            ColorType.AICP_COLOR to aicpColorOptions,
                                         )
                                     )
                                 )
