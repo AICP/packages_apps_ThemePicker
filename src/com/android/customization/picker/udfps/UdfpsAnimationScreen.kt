@@ -51,7 +51,7 @@ import com.android.wallpaper.R as WallpaperR
 @Composable
 fun UdfpsAnimationScreen() {
     val context = LocalContext.current
-    val animationPackage = "org.derpfest.overlay.customization.udfps.animations"
+    val animationPackage = "com.aicp.overlay.udfps.animations"
 
     val animationData = remember {
         loadAnimationData(context, animationPackage)

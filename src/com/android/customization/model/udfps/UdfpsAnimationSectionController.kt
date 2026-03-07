@@ -85,7 +85,7 @@ class UdfpsAnimationSectionController(
     }
 
     private fun isUdfpsAnimationPackageInstalled(context: Context): Boolean {
-        val animationPackage = "org.derpfest.overlay.customization.udfps.animations"
+        val animationPackage = "com.aicp.overlay.udfps.animations"
         return isPackageInstalled(context, animationPackage)
     }
 
