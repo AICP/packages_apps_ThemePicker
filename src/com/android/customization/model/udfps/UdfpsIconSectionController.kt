@@ -74,7 +74,7 @@ class UdfpsIconSectionController(
     }
 
     private fun isUdfpsIconPackageInstalled(context: Context): Boolean {
-        val iconPackage = "org.derpfest.udfps.icons"
+        val iconPackage = "com.aicp.udfps.icons"
         return isPackageInstalled(context, iconPackage)
     }
 

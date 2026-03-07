@@ -44,7 +44,7 @@ import com.android.themepicker.R
 @Composable
 fun UdfpsIconScreen() {
     val context = LocalContext.current
-    val iconPackage = "org.derpfest.udfps.icons"
+    val iconPackage = "com.aicp.udfps.icons"
 
     val icons = remember {
         loadIconList(context, iconPackage)
