@@ -67,8 +67,6 @@ private constructor(
                                         context.resources.getString(R.string.preset_color_tab_2)
                                     ColorType.AICP_COLOR ->
                                         context.resources.getString(R.string.preset_color_tab_3)
-                                    ColorType.DERPFEST_COLOR ->
-                                        context.resources.getString(R.string.preset_color_tab_4)
                                 },
                             isSelected = isSelected,
                             onClick =
@@ -89,8 +87,6 @@ private constructor(
                 ColorType.WALLPAPER_COLOR ->
                     context.resources.getString(R.string.wallpaper_color_subheader)
                 ColorType.PRESET_COLOR ->
-                    context.resources.getString(R.string.preset_color_subheader)
-                ColorType.DERPFEST_COLOR ->
                     context.resources.getString(R.string.preset_color_subheader)
                 ColorType.AICP_COLOR ->
                     context.resources.getString(R.string.preset_color_subheader)
@@ -177,14 +173,9 @@ private constructor(
             val selectedColorTypeId = selectedColorTypeIdOrNull ?: ColorType.WALLPAPER_COLOR
             val wallpaperOptions = allColorOptions[ColorType.WALLPAPER_COLOR]
             val presetOptions = allColorOptions[ColorType.PRESET_COLOR]
-            val derpfestOptions = allColorOptions[ColorType.DERPFEST_COLOR]
             val aicpOptions = allColorOptions[ColorType.AICP_COLOR]
 
             when (selectedColorTypeId) {
-                ColorType.DERPFEST_COLOR -> {
-                    // For DerpFest tab, show all DerpFest colors
-                    derpfestOptions?.take(COLOR_SECTION_OPTION_SIZE) ?: emptyList()
-                }
                 ColorType.AICP_COLOR -> {
                     // For AICP tab, show all AICP colors
                     aicpOptions?.take(COLOR_SECTION_OPTION_SIZE) ?: emptyList()

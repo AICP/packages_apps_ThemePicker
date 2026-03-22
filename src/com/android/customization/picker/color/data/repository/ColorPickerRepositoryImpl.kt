@@ -68,7 +68,6 @@ constructor(
                                 ColorType.WALLPAPER_COLOR to listOf(),
                                 ColorType.AICP_COLOR to listOf(),
                                 ColorType.PRESET_COLOR to listOf(),
-                                ColorType.DERPFEST_COLOR to listOf(),
                             )
                         )
                     )
@@ -83,8 +82,6 @@ constructor(
                             val wallpaperColorOptions: MutableList<ColorOptionModel> =
                                 mutableListOf()
                             val presetColorOptions: MutableList<ColorOptionModel> = mutableListOf()
-                            val derpfestColorOptions: MutableList<ColorOptionModel> =
-                                mutableListOf()
                             val aicpColorOptions: MutableList<ColorOptionModel> =
                                 mutableListOf()
                             options?.forEach { option ->
@@ -93,8 +90,6 @@ constructor(
                                         wallpaperColorOptions.add(option.toModel())
                                     ColorType.PRESET_COLOR ->
                                         presetColorOptions.add(option.toModel())
-                                    ColorType.DERPFEST_COLOR ->
-                                        derpfestColorOptions.add(option.toModel())
                                     ColorType.AICP_COLOR ->
                                         aicpColorOptions.add(option.toModel())
                                 }
@@ -105,7 +100,6 @@ constructor(
                                         ColorType.WALLPAPER_COLOR to wallpaperColorOptions,
                                         ColorType.AICP_COLOR to aicpColorOptions,
                                         ColorType.PRESET_COLOR to presetColorOptions,
-                                        ColorType.DERPFEST_COLOR to derpfestColorOptions,
                                     )
                                 )
                             )
