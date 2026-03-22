@@ -87,8 +87,6 @@ constructor(
                                 val wallpaperColorOptions: MutableList<ColorOption> =
                                     mutableListOf()
                                 val presetColorOptions: MutableList<ColorOption> = mutableListOf()
-                                val derpfestColorOptions: MutableList<ColorOption> =
-                                    mutableListOf()
                                 val aicpColorOptions: MutableList<ColorOption> =
                                     mutableListOf()
                                 options?.forEach { option ->
@@ -96,8 +94,6 @@ constructor(
                                         ColorType.WALLPAPER_COLOR ->
                                             wallpaperColorOptions.add(option)
                                         ColorType.PRESET_COLOR -> presetColorOptions.add(option)
-                                        ColorType.DERPFEST_COLOR ->
-                                            derpfestColorOptions.add(option)
                                         ColorType.AICP_COLOR ->
                                             aicpColorOptions.add(option)
                                     }
@@ -108,7 +104,6 @@ constructor(
                                             ColorType.WALLPAPER_COLOR to wallpaperColorOptions,
                                             ColorType.AICP_COLOR to aicpColorOptions,
                                             ColorType.PRESET_COLOR to presetColorOptions,
-                                            ColorType.DERPFEST_COLOR to derpfestColorOptions,
                                         )
                                     )
                                 )

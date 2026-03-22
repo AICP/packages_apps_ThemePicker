@@ -43,7 +43,6 @@ class FakeColorPickerRepository(private val context: Context) : ColorPickerRepos
                 ColorType.WALLPAPER_COLOR to listOf(),
                 ColorType.AICP_COLOR to listOf(),
                 ColorType.PRESET_COLOR to listOf(),
-                ColorType.DERPFEST_COLOR to listOf(),
             )
         )
     override val colorOptions: StateFlow<Map<ColorType, List<ColorOptionModel>>> =
@@ -98,7 +97,6 @@ class FakeColorPickerRepository(private val context: Context) : ColorPickerRepos
                             add(colorOptionModel)
                         }
                     },
-                ColorType.DERPFEST_COLOR to listOf(),
             )
     }
 
@@ -147,7 +145,6 @@ class FakeColorPickerRepository(private val context: Context) : ColorPickerRepos
                             add(colorOption)
                         }
                     },
-                ColorType.DERPFEST_COLOR to listOf(),
             )
     }
 
@@ -253,18 +250,6 @@ class FakeColorPickerRepository(private val context: Context) : ColorPickerRepos
                 )
             }
         }
-        val derpfestColorOptions = colorOptions[ColorType.DERPFEST_COLOR]!!
-        val newDerpfestColorOptions = buildList {
-            derpfestColorOptions.forEach { option ->
-                add(
-                    ColorOptionModel(
-                        key = option.key,
-                        colorOption = option.colorOption,
-                        isSelected = option.testEquals(colorOptionModel),
-                    )
-                )
-            }
-        }
         val aicpColorOptions = colorOptions[ColorType.AICP_COLOR]!!
         val newAICPColorOptions = buildList {
             aicpColorOptions.forEach { option ->
@@ -282,7 +267,6 @@ class FakeColorPickerRepository(private val context: Context) : ColorPickerRepos
                 ColorType.WALLPAPER_COLOR to newWallpaperColorOptions,
                 ColorType.AICP_COLOR to newAICPColorOptions,
                 ColorType.PRESET_COLOR to newBasicColorOptions,
-                ColorType.DERPFEST_COLOR to newDerpfestColorOptions,
             )
     }
 
@@ -292,7 +276,6 @@ class FakeColorPickerRepository(private val context: Context) : ColorPickerRepos
         when ((selectedColorOption.colorOption as ColorOptionImpl).type) {
             ColorType.WALLPAPER_COLOR -> ColorOptionsProvider.COLOR_SOURCE_HOME
             ColorType.PRESET_COLOR -> ColorOptionsProvider.COLOR_SOURCE_PRESET
-            ColorType.DERPFEST_COLOR -> ColorOptionsProvider.COLOR_SOURCE_PRESET
             ColorType.AICP_COLOR -> ColorOptionsProvider.COLOR_SOURCE_PRESET
             else -> null
         }
