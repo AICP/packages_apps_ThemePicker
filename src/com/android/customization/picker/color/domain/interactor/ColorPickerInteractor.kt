@@ -16,6 +16,7 @@
  */
 package com.android.customization.picker.color.domain.interactor
 
+import android.provider.Settings
 import com.android.customization.picker.color.data.repository.ColorPickerRepository
 import com.android.customization.picker.color.shared.model.ColorOptionModel
 import javax.inject.Inject
@@ -23,6 +24,7 @@ import javax.inject.Singleton
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.onEach
+import org.json.JSONObject
 
 /** Single entry-point for all application state and business logic related to system color. */
 @Singleton
@@ -58,6 +60,24 @@ constructor(
             snapshotRestorer.storeSnapshot(colorOptionModel)
         } catch (e: Exception) {
             _selectingColorOption.value = null
+        }
+    }
+
+    fun applyCustomColor(context: android.content.Context, colorInt: Int) {
+        val hexString = String.format("%06X", 0xFFFFFF and colorInt)
+        try {
+            val json = JSONObject().apply {
+                put("android.theme.customization.accent_color", hexString)
+                put("android.theme.customization.color_source", "preset")
+                put("android.theme.customization.theme_style", "TONAL_SPOT")
+            }
+            android.provider.Settings.Secure.putString(
+                context.contentResolver,
+                "theme_customization_overlay_packages",
+                json.toString()
+            )
+        } catch (e: Exception) {
+            android.util.Log.e("ColorPickerInteractor", "Failed to apply custom color", e)
         }
     }
 }
