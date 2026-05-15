@@ -30,12 +30,17 @@ import androidx.core.view.isVisible
 import androidx.core.view.updateLayoutParams
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.get
+import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import androidx.transition.Transition
 import androidx.transition.doOnStart
 import com.android.customization.model.mode.DarkModeSectionController
 import com.android.customization.module.ThemePickerInjector
+import com.android.customization.picker.color.shared.model.ColorType
 import com.android.customization.picker.color.ui.binder.ColorPickerBinder
+import com.android.customization.picker.color.ui.binder.CustomColorSectionViewBinder
+import com.android.customization.picker.color.ui.viewmodel.ColorPickerViewModel
 import com.android.themepicker.R
 import com.android.wallpaper.model.Screen
 import com.android.wallpaper.module.InjectorProvider
@@ -51,10 +56,12 @@ import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.suspendCancellableCoroutine
 import kotlinx.coroutines.withContext
+import net.margaritov.preference.colorpicker.ColorPickerDialog
 
 @OptIn(ExperimentalCoroutinesApi::class)
 class ColorPickerFragment : AppbarFragment() {
     private var binding: ColorPickerBinder.Binding? = null
+    private var colorPickerViewModel: ColorPickerViewModel? = null
 
     companion object {
         @JvmStatic
@@ -79,7 +86,7 @@ class ColorPickerFragment : AppbarFragment() {
         }
         setUpToolbar(view)
 
-        val injector = InjectorProvider.getInjector() as ThemePickerInjector
+        val injector = com.android.wallpaper.module.InjectorProvider.getInjector() as com.android.customization.module.ThemePickerInjector
         val lockScreenView: CardView = view.requireViewById(R.id.lock_preview)
         val homeScreenView: CardView = view.requireViewById(R.id.home_preview)
         val wallpaperInfoFactory = injector.getCurrentWallpaperInfoFactory(requireContext())
@@ -87,17 +94,11 @@ class ColorPickerFragment : AppbarFragment() {
         val wallpaperColorsRepository = injector.getWallpaperColorsRepository()
         val wallpaperManager = WallpaperManager.getInstance(requireContext())
 
-        binding =
-            ColorPickerBinder.bind(
-                view = view,
-                viewModel =
-                    ViewModelProvider(
-                            requireActivity(),
-                            injector.getColorPickerViewModelFactory(requireContext()),
-                        )
-                        .get(),
-                lifecycleOwner = this,
-            )
+        val viewModel = ViewModelProvider(
+            requireActivity(),
+            injector.getColorPickerViewModelFactory(requireContext()),
+        ).get(ColorPickerViewModel::class.java)
+            this.colorPickerViewModel = viewModel
 
         savedInstanceState?.let { binding?.restoreInstanceState(it) }
 
@@ -223,7 +224,28 @@ class ColorPickerFragment : AppbarFragment() {
             homeScreenView.isVisible = false
         }
 
+        ColorPickerBinder.bind(
+            view = view,
+            viewModel = viewModel,
+            lifecycleOwner = viewLifecycleOwner,
+        )
+
         return view
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+            super.onViewCreated(view, savedInstanceState)
+
+    val viewModel = colorPickerViewModel ?: return
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
+                viewModel.selectedColorTypeTabId.collect { selectedType ->
+                    if (selectedType == ColorType.CUSTOM_COLOR) {
+                        launchCustomColorPicker(viewModel)
+                    }
+                }
+            }
+        }
     }
 
     private suspend fun loadInitialColors(
@@ -253,6 +275,17 @@ class ColorPickerFragment : AppbarFragment() {
     override fun onSaveInstanceState(savedInstanceState: Bundle) {
         super.onSaveInstanceState(savedInstanceState)
         binding?.saveInstanceState(savedInstanceState)
+    }
+
+    private fun launchCustomColorPicker(viewModel: ColorPickerViewModel) {
+        val context = requireContext()
+        val currentColor = context.getColor(android.R.color.system_accent1_500)        
+        val dialog = ColorPickerDialog(context, currentColor)
+        dialog.setAlphaSliderVisible(false)
+        dialog.setOnColorChangedListener { color ->
+            viewModel.interactor.applyCustomColor(context, color)
+        }
+        dialog.show()
     }
 
     override fun getDefaultTitle(): CharSequence {
