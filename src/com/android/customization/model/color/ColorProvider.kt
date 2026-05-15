@@ -388,6 +388,7 @@ class ColorProvider(private val context: Context, stubPackageName: String) :
         val presetColors = presetColorBundles ?: emptyList()
         val wallpaperColors = wallpaperColorBundles?.toMutableList() ?: mutableListOf()
         val aicpColors = aicpColorProvider.getAICPColors()
+        val customColors = customColorProvider.getCUSTOMColors()
 
         // Insert monochrome in the second position if it is enabled and included in preset
         // colors
@@ -404,6 +405,6 @@ class ColorProvider(private val context: Context, stubPackageName: String) :
                 )
             }
         }
-        return wallpaperColors + presetColors + aicpColors
+        return wallpaperColors + presetColors + aicpColors + customColors
     }
 }
