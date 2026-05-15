@@ -200,7 +200,7 @@ private constructor(
 
     class Factory(
         private val context: Context,
-        private val interactor: ColorPickerInteractor,
+        internal val interactor: ColorPickerInteractor,
         private val logger: ThemesUserEventLogger,
     ) : ViewModelProvider.Factory {
         override fun <T : ViewModel> create(modelClass: Class<T>): T {
