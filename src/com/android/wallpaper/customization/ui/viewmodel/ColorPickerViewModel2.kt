@@ -87,6 +87,8 @@ constructor(
                             context.resources.getString(R.string.preset_color_tab_2)
                         ColorType.AICP_COLOR ->
                             context.resources.getString(R.string.preset_color_tab_3)
+                        ColorType.CUSTOM_COLOR ->
+                            context.resources.getString(R.string.preset_color_tab_4)
                     }
 
                 FloatingToolbarTabViewModel(
@@ -97,6 +99,7 @@ constructor(
                                     com.android.wallpaper.R.drawable.ic_baseline_wallpaper_24
                                 ColorType.PRESET_COLOR -> R.drawable.ic_colors
                                 ColorType.AICP_COLOR -> R.drawable.ic_colors
+                                ColorType.CUSTOM_COLOR -> R.drawable.ic_colors
                             },
                         contentDescription = Text.Loaded(name),
                     ),
@@ -119,6 +122,8 @@ constructor(
                 ColorType.PRESET_COLOR ->
                     context.resources.getString(R.string.preset_color_subheader)
                 ColorType.AICP_COLOR ->
+                    context.resources.getString(R.string.preset_color_subheader)
+                ColorType.CUSTOM_COLOR ->
                     context.resources.getString(R.string.preset_color_subheader)
             }
         }

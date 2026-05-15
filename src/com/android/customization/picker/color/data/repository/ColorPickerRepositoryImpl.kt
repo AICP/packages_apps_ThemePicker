@@ -67,6 +67,7 @@ constructor(
                             mapOf(
                                 ColorType.WALLPAPER_COLOR to listOf(),
                                 ColorType.AICP_COLOR to listOf(),
+                                ColorType.CUSTOM_COLOR to listOf(),
                                 ColorType.PRESET_COLOR to listOf(),
                             )
                         )
@@ -84,6 +85,21 @@ constructor(
                             val presetColorOptions: MutableList<ColorOptionModel> = mutableListOf()
                             val aicpColorOptions: MutableList<ColorOptionModel> =
                                 mutableListOf()
+                            val customColorOptions: MutableList<ColorOptionModel> =
+                                mutableListOf()
+                                options?.firstOrNull()?.let { baseOption ->
+                                    customColorOptions.add(
+                                        ColorOptionImpl(
+                                            "custom_trigger",
+                                            baseOption.lightColors,
+                                            baseOption.darkColors,
+                                            baseOption.isDefault,
+                                            ColorType.CUSTOM_COLOR,
+                                            baseOption.index,
+                                            baseOption.title
+                                        )
+                                    )
+                                }
                             options?.forEach { option ->
                                 when ((option as ColorOptionImpl).type) {
                                     ColorType.WALLPAPER_COLOR ->
@@ -92,6 +108,8 @@ constructor(
                                         presetColorOptions.add(option.toModel())
                                     ColorType.AICP_COLOR ->
                                         aicpColorOptions.add(option.toModel())
+                                    ColorType.CUSTOM_COLOR ->
+                                        customColorOptions.add(option.toModel())
                                 }
                             }
                             continuation.resumeWith(
@@ -99,6 +117,7 @@ constructor(
                                     mapOf(
                                         ColorType.WALLPAPER_COLOR to wallpaperColorOptions,
                                         ColorType.AICP_COLOR to aicpColorOptions,
+                                        ColorType.CUSTOM_COLOR to customColorOptions,
                                         ColorType.PRESET_COLOR to presetColorOptions,
                                     )
                                 )
