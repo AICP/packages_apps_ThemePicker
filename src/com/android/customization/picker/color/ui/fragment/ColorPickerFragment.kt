@@ -36,6 +36,7 @@ import androidx.transition.doOnStart
 import com.android.customization.model.mode.DarkModeSectionController
 import com.android.customization.module.ThemePickerInjector
 import com.android.customization.picker.color.ui.binder.ColorPickerBinder
+import com.android.customization.picker.color.ui.binder.CustomColorSectionViewBinder
 import com.android.themepicker.R
 import com.android.wallpaper.model.Screen
 import com.android.wallpaper.module.InjectorProvider
@@ -86,6 +87,7 @@ class ColorPickerFragment : AppbarFragment() {
         val displayUtils: DisplayUtils = injector.getDisplayUtils(requireContext())
         val wallpaperColorsRepository = injector.getWallpaperColorsRepository()
         val wallpaperManager = WallpaperManager.getInstance(requireContext())
+        val customTabTrigger: View = view.requireViewById(R.id.custom_color_tab_container)
 
         binding =
             ColorPickerBinder.bind(
@@ -96,6 +98,10 @@ class ColorPickerFragment : AppbarFragment() {
                             injector.getColorPickerViewModelFactory(requireContext()),
                         )
                         .get(),
+                CustomColorSectionViewBinder.bind(
+                    view = customTabTrigger,
+                    viewModel = viewModel
+                )
                 lifecycleOwner = this,
             )
 
