@@ -38,11 +38,10 @@ import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 
 /** Models UI state for a color picker experience. */
-class ColorPickerViewModel
-private constructor(
-    context: Context,
-    private val interactor: ColorPickerInteractor,
-    private val logger: ThemesUserEventLogger,
+class ColorPickerViewModel @Inject constructor(
+    private val context: Context,
+    internal val interactor: ColorPickerInteractor,
+    @BackgroundDispatcher private val bgDispatcher: CoroutineDispatcher,
 ) : ViewModel() {
 
     private val selectedColorTypeTabId = MutableStateFlow<ColorType?>(null)
@@ -200,7 +199,7 @@ private constructor(
 
     class Factory(
         private val context: Context,
-        private val interactor: ColorPickerInteractor,
+        internal val interactor: ColorPickerInteractor,
         private val logger: ThemesUserEventLogger,
     ) : ViewModelProvider.Factory {
         override fun <T : ViewModel> create(modelClass: Class<T>): T {
