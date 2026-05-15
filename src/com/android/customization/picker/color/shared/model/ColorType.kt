@@ -25,4 +25,6 @@ enum class ColorType {
 
     /** AICP colors */
     AICP_COLOR,
+
+    CUSTOM_COLOR,
 }
