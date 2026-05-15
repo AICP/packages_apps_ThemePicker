@@ -29,6 +29,7 @@ import com.android.wallpaper.picker.common.text.ui.viewmodel.Text
 import com.android.wallpaper.picker.option.ui.viewmodel.OptionItemViewModel
 import kotlin.math.max
 import kotlin.math.min
+import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -41,11 +42,12 @@ import kotlinx.coroutines.launch
 class ColorPickerViewModel
 private constructor(
     context: Context,
-    private val interactor: ColorPickerInteractor,
+    internal val interactor: ColorPickerInteractor,
     private val logger: ThemesUserEventLogger,
 ) : ViewModel() {
 
-    private val selectedColorTypeTabId = MutableStateFlow<ColorType?>(null)
+    val onLaunchCustomPicker = kotlinx.coroutines.flow.MutableSharedFlow<Unit>(extraBufferCapacity = 1)
+    internal val selectedColorTypeTabId = MutableStateFlow<ColorType?>(null)
 
     /** View-models for each color tab. */
     val colorTypeTabs: Flow<Map<ColorType, ColorTypeTabViewModel>> =
@@ -67,14 +69,16 @@ private constructor(
                                         context.resources.getString(R.string.preset_color_tab_2)
                                     ColorType.AICP_COLOR ->
                                         context.resources.getString(R.string.preset_color_tab_3)
+                                    ColorType.CUSTOM_COLOR ->
+                                        context.resources.getString(R.string.preset_color_tab_4)
                                 },
                             isSelected = isSelected,
-                            onClick =
-                                if (isSelected) {
-                                    null
-                                } else {
-                                    { this.selectedColorTypeTabId.value = colorType }
-                                },
+                            onClick = {
+                                if (colorType == ColorType.CUSTOM_COLOR) {
+                                    onLaunchCustomPicker.tryEmit(Unit)
+                                }
+                                selectedColorTypeTabId.value = colorType
+                                }
                         )
                 }
                 .toMap()
@@ -89,6 +93,8 @@ private constructor(
                 ColorType.PRESET_COLOR ->
                     context.resources.getString(R.string.preset_color_subheader)
                 ColorType.AICP_COLOR ->
+                    context.resources.getString(R.string.preset_color_subheader)
+                ColorType.CUSTOM_COLOR ->
                     context.resources.getString(R.string.preset_color_subheader)
             }
         }
@@ -174,11 +180,15 @@ private constructor(
             val wallpaperOptions = allColorOptions[ColorType.WALLPAPER_COLOR]
             val presetOptions = allColorOptions[ColorType.PRESET_COLOR]
             val aicpOptions = allColorOptions[ColorType.AICP_COLOR]
+            val customOptions = allColorOptions[ColorType.CUSTOM_COLOR]
 
             when (selectedColorTypeId) {
                 ColorType.AICP_COLOR -> {
                     // For AICP tab, show all AICP colors
                     aicpOptions?.take(COLOR_SECTION_OPTION_SIZE) ?: emptyList()
+                }
+                ColorType.CUSTOM_COLOR -> {
+                    emptyList<OptionItemViewModel<ColorOptionIconViewModel>>()
                 }
                 else -> {
                     // For other tabs, show wallpaper colors first, then preset colors if space
@@ -200,7 +210,7 @@ private constructor(
 
     class Factory(
         private val context: Context,
-        private val interactor: ColorPickerInteractor,
+        internal val interactor: ColorPickerInteractor,
         private val logger: ThemesUserEventLogger,
     ) : ViewModelProvider.Factory {
         override fun <T : ViewModel> create(modelClass: Class<T>): T {
