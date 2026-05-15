@@ -29,6 +29,7 @@ import com.android.wallpaper.picker.common.text.ui.viewmodel.Text
 import com.android.wallpaper.picker.option.ui.viewmodel.OptionItemViewModel
 import kotlin.math.max
 import kotlin.math.min
+import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -41,7 +42,7 @@ import kotlinx.coroutines.launch
 class ColorPickerViewModel
 private constructor(
     context: Context,
-    private val interactor: ColorPickerInteractor,
+    internal val interactor: ColorPickerInteractor,
     private val logger: ThemesUserEventLogger,
 ) : ViewModel() {
 
@@ -200,7 +201,7 @@ private constructor(
 
     class Factory(
         private val context: Context,
-        private val interactor: ColorPickerInteractor,
+        internal val interactor: ColorPickerInteractor,
         private val logger: ThemesUserEventLogger,
     ) : ViewModelProvider.Factory {
         override fun <T : ViewModel> create(modelClass: Class<T>): T {
