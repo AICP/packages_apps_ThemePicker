@@ -36,6 +36,8 @@ import androidx.transition.doOnStart
 import com.android.customization.model.mode.DarkModeSectionController
 import com.android.customization.module.ThemePickerInjector
 import com.android.customization.picker.color.ui.binder.ColorPickerBinder
+import com.android.customization.picker.color.ui.binder.CustomColorSectionViewBinder
+import com.android.customization.picker.color.ui.viewmodel.ColorPickerViewModel
 import com.android.themepicker.R
 import com.android.wallpaper.model.Screen
 import com.android.wallpaper.module.InjectorProvider
@@ -87,19 +89,26 @@ class ColorPickerFragment : AppbarFragment() {
         val wallpaperColorsRepository = injector.getWallpaperColorsRepository()
         val wallpaperManager = WallpaperManager.getInstance(requireContext())
 
-        binding =
-            ColorPickerBinder.bind(
-                view = view,
-                viewModel =
-                    ViewModelProvider(
-                            requireActivity(),
-                            injector.getColorPickerViewModelFactory(requireContext()),
-                        )
-                        .get(),
-                lifecycleOwner = this,
-            )
-
         savedInstanceState?.let { binding?.restoreInstanceState(it) }
+
+        val colorPickerViewModel: ColorPickerViewModel = ViewModelProvider(
+            requireActivity(),
+            injector.getColorPickerViewModelFactory(requireContext()),
+        ).get(ColorPickerViewModel::class.java)
+
+        lifecycleScope.launch {
+        colorPickerViewModel.selectedColorTypeTabId.collect { selectedType ->
+            if (selectedType == ColorType.CUSTOM_COLOR) {
+                launchCustomColorPicker(colorPickerViewModel)
+            }
+        }
+    }
+
+        binding = ColorPickerBinder.bind(
+            view = view,
+            viewModel = colorPickerViewModel,
+            lifecycleOwner = this,
+        )
 
         val lockScreenPreviewBinder =
             ScreenPreviewBinder.bind(
