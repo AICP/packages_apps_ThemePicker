@@ -42,6 +42,7 @@ class FakeColorPickerRepository(private val context: Context) : ColorPickerRepos
             mapOf<ColorType, List<ColorOptionModel>>(
                 ColorType.WALLPAPER_COLOR to listOf(),
                 ColorType.AICP_COLOR to listOf(),
+                ColorType.CUSTOM_COLOR to listOf(),
                 ColorType.PRESET_COLOR to listOf(),
             )
         )
@@ -79,6 +80,7 @@ class FakeColorPickerRepository(private val context: Context) : ColorPickerRepos
                         }
                     },
                 ColorType.AICP_COLOR to listOf(),
+                ColorType.CUSTOM_COLOR to listOf(),
                 ColorType.PRESET_COLOR to
                     buildList {
                         for ((index, colorOption) in presetOptions.withIndex()) {
@@ -127,6 +129,7 @@ class FakeColorPickerRepository(private val context: Context) : ColorPickerRepos
                         }
                     },
                 ColorType.AICP_COLOR to listOf(),
+                ColorType.CUSTOM_COLOR to listOf(),
                 ColorType.PRESET_COLOR to
                     buildList {
                         repeat(times = numPresetOptions) { index ->
@@ -262,10 +265,23 @@ class FakeColorPickerRepository(private val context: Context) : ColorPickerRepos
                 )
             }
         }
+        val customColorOptions = colorOptions[ColorType.CUSTOM_COLOR]!!
+        val newCUSTOMColorOptions = buildList {
+            customColorOptions.forEach { option ->
+                add(
+                    ColorOptionModel(
+                        key = option.key,
+                        colorOption = option.colorOption,
+                        isSelected = option.testEquals(colorOptionModel),
+                    )
+                )
+            }
+        }
         _colorOptions.value =
             mapOf(
                 ColorType.WALLPAPER_COLOR to newWallpaperColorOptions,
                 ColorType.AICP_COLOR to newAICPColorOptions,
+                ColorType.CUSTOM_COLOR to newCustomColorOptions,
                 ColorType.PRESET_COLOR to newBasicColorOptions,
             )
     }
@@ -277,6 +293,7 @@ class FakeColorPickerRepository(private val context: Context) : ColorPickerRepos
             ColorType.WALLPAPER_COLOR -> ColorOptionsProvider.COLOR_SOURCE_HOME
             ColorType.PRESET_COLOR -> ColorOptionsProvider.COLOR_SOURCE_PRESET
             ColorType.AICP_COLOR -> ColorOptionsProvider.COLOR_SOURCE_PRESET
+            ColorType.CUSTOM_COLOR -> ColorOptionsProvider.COLOR_SOURCE_PRESET
             else -> null
         }
 
