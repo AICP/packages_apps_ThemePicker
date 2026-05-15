@@ -16,6 +16,7 @@
  */
 package com.android.customization.picker.color.domain.interactor
 
+import android.provider.Settings
 import com.android.customization.picker.color.data.repository.ColorPickerRepository
 import com.android.customization.picker.color.shared.model.ColorOptionModel
 import javax.inject.Inject
@@ -23,6 +24,7 @@ import javax.inject.Singleton
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.onEach
+import org.json.JSONObject
 
 /** Single entry-point for all application state and business logic related to system color. */
 @Singleton
@@ -50,6 +52,22 @@ constructor(
 
     suspend fun select(colorOptionModel: ColorOptionModel) {
         _selectingColorOption.value = colorOptionModel
+        fun applyCustomColor(colorInt: Int) {
+        val hexString = String.format("%06X", 0xFFFFFF and colorInt)
+        try {
+            val json = JSONObject().apply {
+                put("android.theme.customization.accent_color", hexString)
+                put("android.theme.customization.color_source", "preset")
+                put("android.theme.customization.theme_style", "TONAL_SPOT")
+            }
+            Settings.Secure.putString(
+                context.contentResolver,
+                "theme_customization_overlay_packages",
+                json.toString()
+            )
+        } catch (e: Exception) {
+        }
+    }
         try {
             // Do not reset optimistic update selection on selection success because UI color is not
             // actually updated until the picker restarts. Wait to do so when updated color options
