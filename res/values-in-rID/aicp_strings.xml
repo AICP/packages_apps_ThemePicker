@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="preset_color_tab_3">Warna AICP</string>
+    <string name="udfps_animation_title">Animasi sidik jari</string>
+    <string name="udfps_animation_description">Sesuaikan animasi pembukaan kunci sidik jari</string>
+    <string name="udfps_icon_title">Ikon sidik jari</string>
+    <string name="udfps_icon_description">Sesuaikan ikon sidik jari pada layar kunci</string>
+    <string name="new_title">Baru</string>
+</resources>

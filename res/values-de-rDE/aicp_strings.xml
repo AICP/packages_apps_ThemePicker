@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="preset_color_tab_3">AICP-Farben</string>
+    <string name="udfps_animation_title">Fingerabdrucksensor-Animationen</string>
+    <string name="udfps_animation_description">Animation beim Entsperren per Fingerabdrucksensor anpassen</string>
+    <string name="udfps_icon_title">Fingerabdrucksensor-Symbol</string>
+    <string name="udfps_icon_description">Symbol des Fingerabdrucksensors für den Sperrbildschirm anpassen</string>
+    <string name="new_title">Neu</string>
+</resources>
