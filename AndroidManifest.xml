@@ -27,6 +27,7 @@
     <queries>
         <package android:name="android"/>
         <package android:name="com.android.launcher3"/>
+        <provider android:authorities="com.android.launcher3.grid_control" />
         <package android:name="com.android.settings"/>
         <package android:name="com.android.systemui"/>
         <!-- Package of camera for icon shape -->
