@@ -30,6 +30,7 @@
         android:layout_height="wrap_content"
         android:text="@string/grid_layout"
         android:layout_marginEnd="@dimen/customization_option_entry_text_margin_end"
+        android:visibility="gone"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/option_entry_icon_container"
         app:layout_constraintBottom_toTopOf="@+id/option_entry_description"
